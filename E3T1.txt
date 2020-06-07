@@ -1,0 +1,11 @@
+Guard Duty findings:
+Guard duty discovered that the instance ID i-0233b1d4e9c619d0f was attacked.
+It was targetted on port 22 (SSH).  
+The actor that targetted the instance was from IP address 10.192.11.151 on Port 47962.
+
+Guard duty also discovered that instance i-0da41dd28ccfa1b37 conducted an attack, which would be an indicator
+that it had been taken over by a malicious actor.  It noted that the attack used port 52100, the VPC it attacked from,
+and the public IP 54.175.126.45 and private IP 10.192.11.151.  It noted the target IP of 10.192.10.76 on port 22.
+
+Guard duty detected this attack through VPC flow logs that are stored in S3.  We configured VPC flow logs for this 
+stack using cloud formation.

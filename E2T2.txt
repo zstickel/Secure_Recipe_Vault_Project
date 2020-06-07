@@ -1,0 +1,10 @@
+
+Ensure only port 80 is open to the ELB, and only port 5000 and 22 are open to the web app instance by changing the security group.
+Ensure that the web service instance only accepts traffic from the ELB or my IP by changing the security group.    
+Enable server side encryption of all three S3 buckets.
+Enable S3 server access logging for all buckets.
+
+Advanced measures:
+Manage EC2 instances with systems manager instead of allowing SSH.
+Encrypt the EBS volumes attached to the EC2 instance.
+Enable http to https redirection on the ELB.  

@@ -1,0 +1,13 @@
+Changes that would prevent the SSH brute force attack:
+Do not expose port 22 or allow SSH by changing the security group. We can use systems manager to access the instance instead.
+Do not allow password access through SSH by changing the sshd_config file or updating ssh config
+through cloud formation (should have been launched this way).
+Only allow ingress to the instance from the load balancer on port 5000 by updating the security group
+and use AWS WAF in front of the load balancer.
+
+
+Preventing access to the data in the S3 secret bucket:
+Default encryption should be turned on and any unencrypted objects should be encrypted.  
+Public access to the secret recipe bucket should be blocked and the access control list should 
+only allow access for the authorized/authenticated users of that bucket which does not include the web app instance.
+The web app instance role should also be changed to limit it's S3 privilige to read only, and only the free recipe bucket.

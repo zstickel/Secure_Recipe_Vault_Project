@@ -1,0 +1,23 @@
+
+#Poor security practice #1
+The web application instance is in a public subnet and should be in a private subnet.
+ 
+#Poor security practice #2
+The policy attached to the instance role does not apply least privilige. It should only allow reads fron the S3 bucket "Free Recipies" instead 
+of 's3:*' in resource '*' (all s3 actions on all resources) which the web app instance and the attack instance currently have. 
+ 
+#Poor security practice #3
+The security group is too porous. The security group for the web app instance should only allow tcp traffic from the load balancer on port 5000, 
+not 0.0.0.0/0 (all IPV4). The web app should egress traffic through a NAT gateway, not directly. 
+     
+#Poor security practice #4
+The S3 buckets lack server side encryption and versioning. 
+
+#Poor security practice #5
+S3 buckets do not block public access.The bucket "Secret recipe vault" should have "block public access" selected and should use an 
+access control list that limits access to privileged business users.  
+
+
+
+
+ 

@@ -1,0 +1,26 @@
+Tools that would allow me to scan Infrastructure as code templates:
+Open Source Tools: Cfripper, Cloudsploit, cfn-lint. For terraform you can use Chef inspec, Regula, or Terrascan.
+Example compliance violation or vulnerability the tools would expose: Infrastructure allows an instance to have
+full access to a resource that is not in compliance with policy (such as allowing full access to S3 when your rule only 
+allows read access).
+
+Tools that would allow me to scan AMIs and containers:
+AMIs - AWS Inspector
+Example compliance violation or vulnerability the tools would expose: Discover that SSH password login is allowed.
+
+Containers - Open source tools such as Claire, Anchore, Trivy; commercial products such as aquasec, sysdig, or twistlock.
+Example compliance violation or vulnerability the tools would expose: Detect and report on a CVE and provide the CVE number
+and description such as CVE-2019-5736 which would allow a malicious container to overwrite the host runc binary and gain root
+level code execution. 
+
+Tools that would allow me to scan the AWS environment for vulnerabilities:
+AWS Config, Guard Duty, Inspector. Open source tools such as Prowler, Scout2, Cloudsploit, or commercial products such
+as Fugue, Palo Alto Prisma, CloudConformity, etc. 
+Cloud Trail with VPC flow logs, bucket logs, config logs, EC2 server logs, and DNS logs should all be enabled. They can 
+be investigated with a SEIM tool such as Splunk.
+Example compliance violation or vulnerability the tools would expose: Server side encryption not enabled. SSH brute force attack
+has been conducted. 
+
+  
+
+
